@@ -65,7 +65,8 @@ Information leadership research (not completed due to time constraints) - histor
 **Requirements:**
 - Python (3.12+, lower could work too, only tested at 3.12)
 - Install: `pip install -e .` (uv is faster, if you have it)
-- `python download_data.py` (will extract data.zip into root directory of the repo), then `cd` into [graphing/](graphing/)
+- `python download_data.py` (will extract data.zip into root directory of the repo),
+- then run the **Main dashboard files** above from the root directory (don't `cd` into `graphing/`)
 
 
 
