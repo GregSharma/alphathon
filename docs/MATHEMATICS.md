@@ -14,7 +14,7 @@
 
 $$
 \begin{align}
-p_t &= p_{t-1} + w_t, \quad w_t \sim \mathcal{N}(0, Q) \tag{State Transition}\\\\
+p_t &= p_{t-1} + w_t, \quad w_t \sim \mathcal{N}(0, Q) \tag{State Transition}\\
 y_t &= p_t + v_t, \quad v_t \sim \mathcal{N}(0, R) \tag{Observation}
 \end{align}
 $$
@@ -31,7 +31,7 @@ Where:
 
 $$
 \begin{align}
-\hat{p}_{t|t-1} &= \hat{p}_{t-1|t-1}\\\\
+\hat{p}_{t|t-1} &= \hat{p}_{t-1|t-1}\\
 P_{t|t-1} &= P_{t-1|t-1} + Q
 \end{align}
 $$
@@ -40,8 +40,8 @@ $$
 
 $$
 \begin{align}
-K_t &= \frac{P_{t|t-1}}{P_{t|t-1} + R} \tag{Kalman Gain}\\\\
-\hat{p}_{t|t} &= \hat{p}_{t|t-1} + K_t(y_t - \hat{p}_{t|t-1})\\\\
+K_t &= \frac{P_{t|t-1}}{P_{t|t-1} + R} \tag{Kalman Gain}\\
+\hat{p}_{t|t} &= \hat{p}_{t|t-1} + K_t(y_t - \hat{p}_{t|t-1})\\
 P_{t|t} &= (1 - K_t)P_{t|t-1}
 \end{align}
 $$
