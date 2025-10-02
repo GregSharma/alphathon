@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "cython>=3.0", "numpy>=1.24"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Alphathon"
+version = "1.0.0"
+description = "Alphathon project"
+requires-python = ">=3.9"
+dependencies = [
+  "py_vollib_vectorized @ git+https://github.com/ortap/py_vollib_vectorized.git",
+  "fypy @ git+https://github.com/jkirkby3/fypy.git",
+  "pandas",
+  "numpy>=1.24,<3",
+  "matplotlib>=3.7",
+  "csp",
+  "ipykernel",
+  "scipy>=1.10",
+  "graphviz",
+  "jupyter_bokeh",
+  "panel",
+  "watchfiles",
+  "ipywidgets",
+  "tabulate",
+  "seaborn",
+  "regtabletotext",
+  "sqlalchemy",
+  "python-dotenv",
+  "statsmodels",
+  "pandas-datareader",
+  "tidyfinance",
+  "pytest>=8.0",
+  "pathlib"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+fast = [
+  "numba>=0.59",
+]
+
+[tool.setuptools]
+py-modules = []
+packages = ["CSP_Options", "CSP_Options.option_models", "CSP_Options.utils", "mv_rnd", "mv_rnd.cbrapipe", "rnd_extraction"]
+
+[tool.setuptools.package-dir]
+"rnd_extraction" = "rnd_extraction/src/rnd_extraction"
+
+[tool.setuptools.package-data]
+mv_rnd = ["cbrapipe/*.so"]
+rnd_extraction = ["*.so"]

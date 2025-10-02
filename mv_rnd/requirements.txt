@@ -1,0 +1,7 @@
+numpy>=1.24
+numba>=0.59
+pytest>=8
+jupytext>=1.16
+matplotlib>=3.8
+jupyter>=1.0
+scipy

@@ -1,0 +1,443 @@
+# Repo specific files
+# *.parquet
+scratch/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# UV
+#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#uv.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+#poetry.toml
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
+#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
+#pdm.lock
+#pdm.toml
+.pdm-python
+.pdm-build/
+
+# pixi
+#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
+#pixi.lock
+#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
+#   in the .venv directory. It is recommended not to include this directory in version control.
+.pixi
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+# Abstra
+# Abstra is an AI-powered process automation framework.
+# Ignore directories containing user credentials, local state, and settings.
+# Learn more at https://abstra.io/docs
+.abstra/
+
+# Visual Studio Code
+#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
+#  you could uncomment the following to ignore the entire vscode folder
+# .vscode/
+
+# Ruff stuff:
+.ruff_cache/
+
+# PyPI configuration file
+.pypirc
+
+# Cursor
+#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
+#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
+#  refer to https://docs.cursor.com/context/ignore-files
+.cursorignore
+.cursorindexingignore
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/.ipynb_checkpoints/
+.vscode/
+csp_code_that_works/CSP_PairsTrading/__init__.py
+csp_code_that_works/CSP_PairsTrading/nodes_and_structs.py
+csp_code_that_works/CSP_PairsTrading/adapters/__init__.py
+csp_code_that_works/CSP_PairsTrading/adapters/ClickHouseReadAdapter.py
+csp_code_that_works/CSP_PairsTrading/adapters/IBQuoteAdapter.py
+csp_code_that_works/CSP_PairsTrading/ingest/__init__.py
+csp_code_that_works/CSP_PairsTrading/ingest/ibkr_quote_saver.py
+csp_code_that_works/CSP_PairsTrading/models/__init__.py
+csp_code_that_works/CSP_PairsTrading/models/optimal_trading.py
+csp_code_that_works/CSP_PairsTrading/models/parallel_kalman_filter.py
+csp_code_that_works/CSP_PairsTrading/models/pykalman_filter.py
+csp_code_that_works/CSP_PairsTrading/models/theo_kalman_filter.py
+csp_code_that_works/CSP_PairsTrading/trading/__init__.py
+csp_code_that_works/CSP_PairsTrading/trading/compute_equity.py
+csp_code_that_works/CSP_PairsTrading/trading/new_spread_trader_threshold.py
+csp_code_that_works/CSP_PairsTrading/trading/spread_trader_threshold_docs.md
+csp_code_that_works/CSP_PairsTrading/trading/spread_trader_threshold.py
+csp_code_that_works/CSP_PairsTrading/trading/spread_trader_z_score.py
+csp_code_that_works/CSP_PairsTrading/trading/spread_trader.py
+csp_code_that_works/CSP_PairsTrading/trading/test_spread_trader_threshold.ipynb
+csp_code_that_works/CSP_PairsTrading/utils/__init__.py
+csp_code_that_works/CSP_PairsTrading/utils/graphing.py
+csp_code_that_works/CSP_PairsTrading/utils/gregs_basketlib.py
+csp_code_that_works/CSP_PairsTrading/utils/parquet_writer.py
+csp_code_that_works/CSP_PairsTrading/utils/readers.py
+csp_code_that_works/CSP_PairsTrading/utils/zmq_quote_publisher.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/four_funcs.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/parallel_trading.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/run_ntnl_backtests.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/scratch_graphs.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/test_kalman_state.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/test_kf_update_timer.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/test_multi_reader.py
+csp_code_that_works/STUFF_LARGELY_STILL_IN_WIP_BUT_MOST_WORKING/test_trading.py
+AlphathonDataSets/all_1s_quotes/2024-11-05.parquet/2024-11-05.parquet
+AlphathonDataSets/options_selected/AAPL_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/AMD_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/AMZN_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/AVGO_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/BRKB_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/CEG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/DIA_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/DJT_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/EEM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/FXI_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/GOOG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/GOOGL_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/HYG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/IVV_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/IWM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/JPM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/KRE_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/LLY_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/LQD_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/META_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/MSFT_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/MSTR_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/NVDA_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/PLTR_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/QQQ_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/SHW_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/SMCI_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/SMH_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/SOXL_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/SPY_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/SQQQ_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/TLT_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/TQQQ_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/TSLA_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/VOO_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/VUG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/XLE_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/XLF_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/XLU_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected/XOM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-08.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-09.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-10.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-11.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-14.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-15.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-16.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-17.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-18.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-21.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-22.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-23.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-24.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-25.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-28.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-29.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-30.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-10-31.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-11-01.parquet
+AlphathonDataSets/pre-elec/pre-elec-2024-11-04.parquet
+AlphathonDataSets/quotes_selected/2024-11-05.parquet
+AlphathonDataSets/trades_selected/2024-11-05.parquet
+AlphathonDataSets/all_1s_quotes/2024-11-05.parquet
+AlphathonDataSets/options_selected_formatted/AAPL_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/AMD_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/AMZN_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/AVGO_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/BRKB_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/CEG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/DIA_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/DJT_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/EEM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/FXI_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/GOOG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/GOOGL_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/HYG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/IVV_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/IWM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/JPM_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/KRE_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/LLY_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/LQD_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/META_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/MSFT_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/MSTR_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/NVDA_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/PLTR_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/QQQ_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/SHW_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/SMCI_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/SMH_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/SOXL_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/SPY_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/SQQQ_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/TLT_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/TQQQ_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/TSLA_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/VOO_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/VUG_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/XLE_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/XLF_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/XLU_20241115_20241105_20241105_1000.parquet
+AlphathonDataSets/options_selected_formatted/XOM_20241115_20241105_20241105_1000.parquet
+data/tidy_finance_python.sqlite
+data/options_2024/SPXW.parquet
+data/options_improved/SPXW_Index.parquet
+data/options_improved/SPXW_Options.parquet
+david/pre-elec-pivot-all.parquet
+
+# Generated files and outputs
+*.pkl
+
+data/alphathon_2025/all_1s_quotes/2024-11-05.parquet
+data/alphathon_2025/kalshi_election/2024-10-08.parquet
+data/alphathon_2025/kalshi_election/2024-10-09.parquet
+data/alphathon_2025/kalshi_election/2024-10-10.parquet
+data/alphathon_2025/kalshi_election/2024-10-11.parquet
+data/alphathon_2025/kalshi_election/2024-10-14.parquet
+data/alphathon_2025/kalshi_election/2024-10-15.parquet
+data/alphathon_2025/kalshi_election/2024-10-16.parquet
+data/alphathon_2025/kalshi_election/2024-10-17.parquet
+data/alphathon_2025/kalshi_election/2024-10-18.parquet
+data/alphathon_2025/kalshi_election/2024-10-21.parquet
+data/alphathon_2025/kalshi_election/2024-10-22.parquet
+data/alphathon_2025/kalshi_election/2024-10-23.parquet
+data/alphathon_2025/kalshi_election/2024-10-24.parquet
+data/alphathon_2025/kalshi_election/2024-10-25.parquet
+data/alphathon_2025/kalshi_election/2024-10-28.parquet
+data/alphathon_2025/kalshi_election/2024-10-29.parquet
+data/alphathon_2025/kalshi_election/2024-10-30.parquet
+data/alphathon_2025/kalshi_election/2024-10-31.parquet
+data/alphathon_2025/kalshi_election/2024-11-01.parquet
+data/alphathon_2025/kalshi_election/2024-11-04.parquet
+data/alphathon_2025/kalshi_election/2024-11-05.parquet
+data/alphathon_2025/options_selected_formatted/AAPL_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/AMD_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/AMZN_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/AVGO_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/BRKB_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/CEG_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/DIA_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/DJT_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/EEM_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/FXI_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/GOOG_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/GOOGL_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/HYG_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/IVV_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/IWM_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/JPM_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/KRE_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/LLY_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/LQD_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/META_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/MSFT_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/MSTR_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/NVDA_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/PLTR_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/QQQ_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/SHW_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/SMCI_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/SMH_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/SOXL_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/SPY_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/SQQQ_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/TLT_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/TQQQ_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/TSLA_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/VOO_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/VUG_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/XLE_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/XLF_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/XLU_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/options_selected_formatted/XOM_20241115_20241105_20241105_1000.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-08.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-09.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-10.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-11.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-14.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-15.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-16.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-17.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-18.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-21.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-22.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-23.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-24.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-25.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-28.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-29.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-30.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-10-31.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-11-01.parquet
+data/alphathon_2025/pre-elec/pre-elec-2024-11-04.parquet
+data/alphathon_2025/quotes_selected/2024-11-05.parquet
+data/alphathon_2025/trades_selected/2024-11-05.parquet

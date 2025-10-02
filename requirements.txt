@@ -1,0 +1,23 @@
+#py_vollib_vectorized
+git+https://github.com/ortap/py_vollib_vectorized.git
+git+https://github.com/jkirkby3/fypy.git
+#perspective-python==3.1.5
+
+numpy<=2 # csp prefers the oldest version of numpy 2 
+matplotlib
+csp
+ipykernel
+#plotly
+graphviz
+jupyter_bokeh
+panel
+watchfiles
+ipywidgets
+tabulate
+seaborn
+regtabletotext
+sqlalchemy
+python-dotenv
+statsmodels
+pandas-datareader
+tidyfinance
