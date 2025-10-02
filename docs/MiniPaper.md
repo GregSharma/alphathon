@@ -243,16 +243,6 @@ Given equity beta matrix $(L\in\mathbb{R}^{5\times 20})$ and ETF beta $(\beta\in
 
 $$w = L^T (L L^T)^{-1} \beta, \quad \text{optionally normalize } w \leftarrow w/(1^T w).$$
 
-With budget constraint $(1^T w=1)$, augment with a row of ones: \$(A=
-
-\begin{bmatrix}L\\1^T\end{bmatrix}
-
-, , b=
-
-\begin{bmatrix}\beta\\1\end{bmatrix}
-
-)\$, then $(w=A^T(AA^T)^{-1}b)$. Time-varying betas suggest a state-space extension (Kalman) in future work.
-
 **Appendix E: Unified Conditional Binary Martingale (UCBM) sketch**
 
 Binary forward prices $(B_t\in(0,1))$ admit a driftless representation under a probit gauge: let $(U_t=\Phi^{-1}(B_t))$, then
