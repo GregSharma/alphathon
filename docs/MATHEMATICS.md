@@ -11,9 +11,10 @@
 **Purpose**: Extract normalized innovations from noisy Kalshi probability trades
 
 **Model**:
+
 $$
 \begin{align}
-p_t &= p_{t-1} + w_t, \quad w_t \sim \mathcal{N}(0, Q) \tag{State Transition}\\
+p_t &= p_{t-1} + w_t, \quad w_t \sim \mathcal{N}(0, Q) \tag{State Transition}\\\\
 y_t &= p_t + v_t, \quad v_t \sim \mathcal{N}(0, R) \tag{Observation}
 \end{align}
 $$
@@ -27,18 +28,20 @@ Where:
 ### 1.2 Kalman Filter Equations
 
 **Prediction Step**:
+
 $$
 \begin{align}
-\hat{p}_{t|t-1} &= \hat{p}_{t-1|t-1}\\
+\hat{p}_{t|t-1} &= \hat{p}_{t-1|t-1}\\\\
 P_{t|t-1} &= P_{t-1|t-1} + Q
 \end{align}
 $$
 
 **Update Step**:
+
 $$
 \begin{align}
-K_t &= \frac{P_{t|t-1}}{P_{t|t-1} + R} \tag{Kalman Gain}\\
-\hat{p}_{t|t} &= \hat{p}_{t|t-1} + K_t(y_t - \hat{p}_{t|t-1})\\
+K_t &= \frac{P_{t|t-1}}{P_{t|t-1} + R} \tag{Kalman Gain}\\\\
+\hat{p}_{t|t} &= \hat{p}_{t|t-1} + K_t(y_t - \hat{p}_{t|t-1})\\\\
 P_{t|t} &= (1 - K_t)P_{t|t-1}
 \end{align}
 $$
@@ -69,10 +72,11 @@ $$
 **Purpose**: Classify trades as buyer- or seller-initiated
 
 **Rule**:
+
 $$
 D_t = \begin{cases}
-+1 & \text{if } P_t > M_t \text{ (buyer-initiated)}\\
--1 & \text{if } P_t < M_t \text{ (seller-initiated)}\\
++1 & \text{if } P_t > M_t \text{ (buyer-initiated)}\\\\
+-1 & \text{if } P_t < M_t \text{ (seller-initiated)}\\\\
 0 & \text{if } P_t = M_t \text{ (at mid)}
 \end{cases}
 $$
@@ -317,10 +321,11 @@ $$
 $$
 
 **Constraints**:
+
 $$
 \begin{align}
-p \cdot f_1(S) + (1-p) \cdot f_0(S) &= f(S) \tag{Consistency}\\
-\int f_1(S) dS &= 1, \quad \int f_0(S) dS = 1 \tag{Normalization}\\
+p \cdot f_1(S) + (1-p) \cdot f_0(S) &= f(S) \tag{Consistency}\\\\
+\int f_1(S) dS &= 1, \quad \int f_0(S) dS = 1 \tag{Normalization}\\\\
 \mathbb{E}_{f_1}[S] &= \mu_1, \quad \mathbb{E}_{f_0}[S] = \mu_0 \tag{Moment Matching}
 \end{align}
 $$
@@ -330,7 +335,7 @@ $$
 **Assumption**: Conditional densities are shifts of base distribution
 
 $$
-f(S | K=1) \approx f(S - \delta_1)\\
+f(S | K=1) \approx f(S - \delta_1)\\\\
 f(S | K=0) \approx f(S - \delta_0)
 $$
 
@@ -339,7 +344,7 @@ $$
 p \cdot (\mu + \delta_1) + (1-p) \cdot (\mu + \delta_0) = \mu
 $$
 
-Gives: $\delta_1 = -\frac{(1-p)}{\p} \delta_0$
+Gives: $\delta_1 = -\frac{(1-p)}{p} \delta_0$
 
 ---
 
@@ -504,9 +509,10 @@ $$
 ### 10.2 Leadership Detection
 
 **For stock-ETF pair**:
+
 $$
 \begin{align}
-\rho_{stock \to ETF} &= \max_{\tau > 0} \rho_{stock, ETF}(\tau)\\
+\rho_{stock \to ETF} &= \max_{\tau > 0} \rho_{stock, ETF}(\tau)\\\\
 \rho_{ETF \to stock} &= \max_{\tau < 0} \rho_{stock, ETF}(\tau)
 \end{align}
 $$
@@ -526,9 +532,10 @@ $$
 ### 11.1 Black-Scholes Greeks
 
 **Delta**:
+
 $$
 \Delta = \frac{\partial C}{\partial S} = \begin{cases}
-\Phi(d_1) & \text{call}\\
+\Phi(d_1) & \text{call}\\\\
 \Phi(d_1) - 1 & \text{put}
 \end{cases}
 $$
