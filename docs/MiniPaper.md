@@ -249,7 +249,7 @@ Binary forward prices $(B_t\in(0,1))$ admit a driftless representation under a p
 
 $$dU_t=\tfrac{1}{2}\,\nu_t^2 U_{t-} dt + \nu_t dW_t + \sum_j \zeta_j(t) dM^{(j)}_t, \quad B_t=\Phi(U_t).$$
 
-Choosing an "information clock" $(\nu_t\sim c/\sqrt{T-t})$ enforces revelation at maturity $((B_T\in\{0,1\}))$. Our Kalshi filter uses a simple state-space denoiser consistent with this view; full UCBM calibration is left for future work.
+Choosing an "information clock" $(\nu_t\sim c/\sqrt{T-t})$ enforces revelation at maturity $((B_T\in\{0,1\}))$. Our Kalshi filter uses a simple state-space denoiser consistent with this view.
 
 
 
