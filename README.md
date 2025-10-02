@@ -62,7 +62,7 @@ Information leadership research (not completed due to time constraints) - histor
 
 **Requirements:**
 - Python 3.12
-- Install: `pip install -e .`
+- Install: `pip install -e .` (uv is faster, if you have it)
 - Download data, then `cd` into `graphing/`
 
 
