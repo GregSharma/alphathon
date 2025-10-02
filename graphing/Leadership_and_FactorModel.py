@@ -60,7 +60,7 @@ except ImportError:
 logging.basicConfig(level=logging.INFO)
 
 DATE_OF_INTEREST = "2024-11-05"
-FACTOR_WEIGHTS_PATH = "/home/grego/Alphathon/fama/factor_weights_tickers.json"
+FACTOR_WEIGHTS_PATH = "../fama/factor_weights_tickers.json"
 
 # Load factor weights
 with open(FACTOR_WEIGHTS_PATH, "r") as f:
