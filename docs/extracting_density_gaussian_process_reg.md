@@ -68,10 +68,10 @@ Hyperparameters $\ell$ (length scale) and $\sigma_f^2$ (signal variance) are est
 - $\sigma_f^2 = \text{var}(\sigma_i)$
 
 ### 2.3 Posterior Prediction
-Given observations $\mathbf{y}$ with noise $\sigma_{IV}^2$, the posterior mean on grid $k_*$ is:
+Given observations $\mathbf{y}$ with noise $\sigma_{IV}^2$, the posterior mean on grid $k_{*}$ is:
 
 $$
-\mu(k_*) = K(k_*, k) [K(k, k) + \Sigma]^{-1} \mathbf{y}
+\mu(k_{*}) = K(k_{*}, k) [K(k, k) + \Sigma]^{-1} \mathbf{y}
 $$
 
 where $\Sigma = \text{diag}(\sigma_{IV}^2)$.

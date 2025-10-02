@@ -1,176 +1,10 @@
 # Unified Conditional Binary Martingale (UCBM): a maturity-aware model for binary prices
 
-Gregory Sharma (working ideas)
+Gregory Sharma (working ideas) | with the help of ChatGPT
 
 ## Abstract
 
-I present a single SDE framework for **any** binary (cash-or-nothing) price process $B_t\in(0,1)$ with fixed maturity $T$: elections, weather thresholds, in-play sports win probabilities, "happens-by-$T$" hazards, and financial digitals # Risk-Neutral Density Extraction: Mathematical Methodology
-
-## Overview
-
-This pipeline extracts a continuous, arbitrage-free **risk-neutral density (RND)** and its **cumulative distribution** from an observed option chain using Gaussian Process regression and the Breeden-Litzenberger identity.
-
----
-
-## 1. Input Processing
-
-### 1.1 Implied Volatility Calculation
-For each option with price \(P\), we invert the Black-Scholes formula to obtain implied volatility \(\sigma_{imp}\):
-
-\[
-P = BS(S, K, \tau, r, \sigma_{imp}, \phi)
-\]
-
-where:
-- \(S\): spot price
-- \(K\): strike price
-- \(\tau\): time to expiry
-- \(r\): risk-free rate
-- \(\phi \in \{c, p\}\): call/put flag
-
-### 1.2 Microprice and Uncertainty
-To account for bid-ask spread, we compute the **microprice** (size-weighted midpoint):
-
-\[
-P_{micro} = \frac{Q_{ask} \cdot P_{bid} + Q_{bid} \cdot P_{ask}}{Q_{bid} + Q_{ask}}
-\]
-
-Price uncertainty (for GP weighting) uses a Beta distribution with variance:
-
-\[
-\sigma_P^2 = \frac{(P_{ask} - P_{bid})^2}{12 \cdot (Q_{bid} + Q_{ask})}
-\]
-
-IV uncertainty via vega transformation:
-
-\[
-\sigma_{IV}^2 = \frac{\sigma_P^2}{\mathcal{V}^2}, \quad \mathcal{V} = S\sqrt{\tau} \cdot \phi(d_1)
-\]
-
----
-
-## 2. Gaussian Process Regression
-
-### 2.1 Log-Moneyness Transformation
-We work in **log-moneyness space** for numerical stability:
-
-\[
-k = \log(K/F), \quad F = S e^{r\tau}
-\]
-
-### 2.2 GP Model
-Fit a GP to observed IVs \(\{k_i, \sigma_i\}\) with RBF kernel:
-
-\[
-\sigma(k) \sim \mathcal{GP}(0, K(k, k'))
-\]
-
-\[
-K(k, k') = \sigma_f^2 \exp\left(-\frac{(k - k')^2}{2\ell^2}\right)
-\]
-
-Hyperparameters \(\ell\) (length scale) and \(\sigma_f^2\) (signal variance) are estimated heuristically:
-- \(\ell = \text{median}(|k_i - k_j|)\)
-- \(\sigma_f^2 = \text{var}(\sigma_i)\)
-
-### 2.3 Posterior Prediction
-Given observations \(\mathbf{y}\) with noise \(\sigma_{IV}^2\), the posterior mean on grid \(k_*\) is:
-
-\[
-\mu(k_*) = K(k_*, k) [K(k, k) + \Sigma]^{-1} \mathbf{y}
-\]
-
-where \(\Sigma = \text{diag}(\sigma_{IV}^2)\).
-
----
-
-## 3. RND Extraction (Breeden-Litzenberger)
-
-### 3.1 Identity
-The risk-neutral density \(q(K)\) is the second derivative of the call price w.r.t. strike:
-
-\[
-q(K) = e^{r\tau} \frac{\partial^2 C(K)}{\partial K^2}
-\]
-
-### 3.2 Numerical Implementation
-1. Compute call prices on grid using fitted IV: \(C(K) = BS(S, K, \tau, r, \mu(k))\)
-2. Numerical differentiation (central differences):
-   \[
-   \frac{\partial C}{\partial K} \approx \frac{C_{i+1} - C_{i-1}}{K_{i+1} - K_{i-1}}
-   \]
-3. Density in strike space: \(q(K) = e^{r\tau} \frac{\partial^2 C}{\partial K^2}\)
-4. Transform to log-moneyness: \(q(k) = q(K) \cdot K\) (Jacobian)
-5. Normalize: \(\int q(k) \, dk = 1\)
-
----
-
-## 4. Cumulative RND
-
-The **cumulative risk-neutral distribution** is:
-
-\[
-Q(k) = \int_{-\infty}^k q(s) \, ds
-\]
-
-Computed via trapezoidal integration with Numba optimization:
-
-\[
-Q(k_i) = Q(k_{i-1}) + \frac{1}{2}(q_{i-1} + q_i)(k_i - k_{i-1})
-\]
-
-Properties:
-- \(Q(-\infty) = 0\)
-- \(Q(+\infty) = 1\)
-- Monotonically increasing
-
----
-
-## 5. Characteristic Function
-
-The **characteristic function** of the RND is its Fourier transform:
-
-\[
-\varphi(u) = \int_{-\infty}^{\infty} e^{\mathrm{i}uk} q(k) \, dk
-\]
-
-Computed numerically via trapezoidal rule:
-
-\[
-\varphi(u) \approx \Delta k \sum_j e^{\mathrm{i}u k_j} q(k_j)
-\]
-
-Properties:
-- \(\varphi(0) = 1\) (normalization check)
-- Real part: \(\text{Re}[\varphi(u)] = \int \cos(uk) q(k) \, dk\)
-
----
-
-## 6. Arbitrage-Free Guarantees
-
-The pipeline ensures no-arbitrage through:
-
-1. **Monotonic call prices**: GP smoothness prevents price crossings
-2. **Non-negative density**: Clipping \(q(k) = \max(q(k), 0)\) after differentiation
-3. **Proper normalization**: \(\int q(k) \, dk = 1\)
-4. **Put-call parity**: Implicit through forward price \(F = Se^{r\tau}\)
-
----
-
-## 7. Computational Optimizations
-
-- **Numba JIT compilation**: RBF kernel, integration, CF computation
-- **Sparse GP**: Low-rank approximation for large chains (not yet implemented)
-- **Vectorization**: NumPy broadcasting for BS pricing and differentiation
-
----
-
-## References
-
-- Breeden, D. T., & Litzenberger, R. H. (1978). "Prices of state-contingent claims implicit in option prices." *Journal of Business*.
-- Rasmussen, C. E., & Williams, C. K. I. (2006). *Gaussian Processes for Machine Learning*.
-
-(Black–Scholes). The model is written in a **probability gauge** so that boundedness and martingality are automatic; a time/state-dependent **information clock** enforces revelation at $T$; optional **jump layers** capture lumpy information (scores/news). I derive full Itô–Lévy dynamics, show that both Taleb's election model and the Black–Scholes digital are special cases, and give estimators/filters and Avellaneda–Stoikov market-making formulas.
+I present a single SDE framework for **any** binary (cash-or-nothing) price process $B_t\in(0,1)$ with fixed maturity $T$: elections, weather thresholds, in-play sports win probabilities, "happens-by-$T$" hazards, and financial digitals.
 
 ---
 
@@ -179,7 +13,7 @@ The pipeline ensures no-arbitrage through:
 * $T>0$: maturity (revelation time).
 * $B_t\in(0,1)$: **forward** probability of the event (for financial digitals: arbitrage price divided by the $T$-bond $P(t,T)$).
 * Probit gauge: $U_t:=\Phi^{-1}(B_t)$, so $B_t=\Phi(U_t)$. Here $\Phi,\phi$ are standard normal CDF/PDF.
-* $W_t$: Brownian motion under the **pricing/forward measure** (risk-neutral with numéraire $P(t,T)$, or the prediction-market analogue).
+* $W_t$: Brownian motion under the forward measure.
 * Jump types $j=1,\dots,J$: counting processes $N^{(j)}_t$ with intensities $\lambda^{(j)}_t$; compensated martingales $M^{(j)}_t:=N^{(j)}_t-\int_0^t\lambda^{(j)}_s ds$.
 * State $\mathcal S_t$: any observable drivers (score lead, weather state, etc.).
 
@@ -196,8 +30,8 @@ dU_t=\tfrac12\,\nu_t^2\,U_{t-}\,dt\;+\;\nu_t\,dW_t\;+\;\sum_{j=1}^J \zeta_j(t,\m
 \tag{UCBM}
 $$
 
-* $\nu_t\ge 0$: **information clock** (time/state-dependent).
-* $\zeta_j(t,\mathcal S)$: jump size **in $U$-space** for event type $j$ (score, ruling, etc.).
+* $\nu_t\ge 0$: information clock (time/state-dependent).
+* $\zeta_j(t,\mathcal S)$: jump size in $U$-space for event type $j$ (score, ruling, etc.).
 
 ### 2.2 Full Itô–Lévy dynamics of $B$
 
@@ -233,8 +67,6 @@ $$
 $$
 
 (e.g., choose $\nu_t\sim c/\sqrt{T-t}$). Then $U_t\to\pm\infty$ and $B_t\to\{0,1\}$ as $t\uparrow T$.
-
-> **Note on raw jumps:** If you prefer writing $U$ with *raw* jumps $dN^{(j)}$, include the standard **jump-curvature** drift so that $B$ is drift-free. Using compensated jumps as above bakes this in.
 
 ---
 
@@ -382,7 +214,7 @@ Hidden state $\Theta_t=(U_t,\{\log\lambda^{(j)}_t\},\ldots)$; observations:
 * Price: $Y_t=\Phi(U_t)+\epsilon_t$ (microstructure noise).
 * Event marks/times: update $\lambda^{(j)}$.
 
-I use **UKF/EnKF** (nonlinear measurement $\Phi$), or **particle filters** if needed; learn static parameters via EM by maximizing one-step predictive likelihood.
+Case for some unscented / extended Kalman filter? Or particle filter (nonlinear measurement $\Phi$)?
 
 ---
 
