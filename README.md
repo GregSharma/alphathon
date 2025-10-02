@@ -1,7 +1,7 @@
-## 1. Mini-Paper
+## 1. Mini-Paper (PDF)
 [docs/MiniPaper.md](docs/MiniPaper.md)
 
-## 2. Results & Data
+## 2. Results Spreadsheet & Data
 
 ### Spreadsheets
 Vector error correction model information leadership analysis across 20 equities and 20 ETFs:
@@ -34,25 +34,6 @@ Runtime comparison for fitting implied risk-neutral density using Gaussian proce
 
 ## 3. Code Files
 
-**Risk-neutral density extraction:**
-- `rnd_extraction/`
-
-**CBRA algorithm** (Conditional Block Rearrangement Algorithm):
-- `mv_rnd/`
-- Reference: "A model-free approach to multivariate option pricing" by Carole Bernard, Oleg Bondarenko, Steven Vanduffel (Accepted: October 2020, Springer)
-
-**Fama-French factors** - connecting to Wharton's WRDS to calculate Fama factors:
-- `fama/`
-
-**Information leadership research** (not completed due to time constraints) - historical ML pipeline to predict one-lag-ahead information leader using microstructure features up until the observed time.
-
-## 4. Setup & Running
-
-**Requirements:**
-- Python 3.12
-- Install: `pip install -e .`
-- Download data, then `cd` into `graphing/`
-
 **Main dashboard files** (serve live Panel dashboards):
 - [graphing/Calculating_Binary_RiskNeutralDensities.py](graphing/Calculating_Binary_RiskNeutralDensities.py) - [📹 Demo Video](https://drive.google.com/file/d/1f9ivleKQddDq5SVWGY_ysZuPdMhbkZDi/view?usp=drive_link)
 - [graphing/Leadership_and_FactorModel.py](graphing/Leadership_and_FactorModel.py) - [📹 Demo Video](https://drive.google.com/file/d/1LFq6dWnWWXEH2WPFlBXI4eEPgDfEbWpk/view?usp=drive_link)
@@ -62,6 +43,27 @@ Runtime comparison for fitting implied risk-neutral density using Gaussian proce
 
 **Additional test files:**
 - [graphing/test_fama_and_microstructure_features.py](graphing/test_fama_and_microstructure_features.py)
+
+**Supporting libraries:**
+
+Risk-neutral density extraction:
+- `rnd_extraction/`
+
+CBRA algorithm (Conditional Block Rearrangement Algorithm):
+- `mv_rnd/`
+- Reference: "A model-free approach to multivariate option pricing" by Carole Bernard, Oleg Bondarenko, Steven Vanduffel (Accepted: October 2020, Springer)
+
+Fama-French factors - connecting to Wharton's WRDS to calculate Fama factors:
+- `fama/`
+
+Information leadership research (not completed due to time constraints) - historical ML pipeline to predict one-lag-ahead information leader using microstructure features up until the observed time.
+
+## 4. Installation & Platform Access
+
+**Requirements:**
+- Python 3.12
+- Install: `pip install -e .`
+- Download data, then `cd` into `graphing/`
 
 
 
