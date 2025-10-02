@@ -1,5 +1,5 @@
 ## 1. Mini-Paper
-`docs/MiniPaper.md`
+[docs/MiniPaper.md](docs/MiniPaper.md)
 
 ## 2. Results & Data
 
@@ -23,7 +23,7 @@ Runtime comparison for fitting implied risk-neutral density using Gaussian proce
 
 **Kalman Filter & Logit Transformation** to denoise raw presidential prices and map to a martingale:
 - `plots_and_figures/kalshi_kalman_filter.pdf`
-- For context, see `docs/Greg_WkngIdeas_on_Binary_Martingales.md`
+- For context, see [docs/Greg_WkngIdeas_on_Binary_Martingales.md](docs/Greg_WkngIdeas_on_Binary_Martingales.md)
 - Reference: [Election Predictions as Martingales: An Arbitrage Approach](https://arxiv.org/pdf/1703.06351) by Nassim Nicholas Taleb (NYU, October 2017)
 
 **Regime decomposition** - moment matching to get lognormal superimposition on Tesla risk-neutral density with binary outcome of election:
@@ -32,7 +32,7 @@ Runtime comparison for fitting implied risk-neutral density using Gaussian proce
 **VECM leadership analysis** - examples of leadership plot using vector error correction model across all 40 assets, lag 1 on a minute basis:
 - `plots_and_figures/vecm_leadership_analysis.pdf`
 
-## 3. Source Code
+## 3. Code Files
 
 **Risk-neutral density extraction:**
 - `rnd_extraction/`
@@ -54,11 +54,16 @@ Runtime comparison for fitting implied risk-neutral density using Gaussian proce
 - Download data, then `cd` into `graphing/`
 
 **Main dashboard files** (serve live Panel dashboards):
-- `graphing/Calculating_Binary_RiskNeutralDensities.py` - [📹 Demo Video](https://drive.google.com/file/d/1f9ivleKQddDq5SVWGY_ysZuPdMhbkZDi/view?usp=drive_link)
-- `graphing/Leadership_and_FactorModel.py` - [📹 Demo Video](https://drive.google.com/file/d/1LFq6dWnWWXEH2WPFlBXI4eEPgDfEbWpk/view?usp=drive_link)
+- [graphing/Calculating_Binary_RiskNeutralDensities.py](graphing/Calculating_Binary_RiskNeutralDensities.py) - [📹 Demo Video](https://drive.google.com/file/d/1f9ivleKQddDq5SVWGY_ysZuPdMhbkZDi/view?usp=drive_link)
+- [graphing/Leadership_and_FactorModel.py](graphing/Leadership_and_FactorModel.py) - [📹 Demo Video](https://drive.google.com/file/d/1LFq6dWnWWXEH2WPFlBXI4eEPgDfEbWpk/view?usp=drive_link)
 
 **Demonstration dashboard** - calculates Fama factors intraday as well as microstructure features:
-- `graphing/Demonstrate_Factors_and_Microstructure_Features.py`
+- [graphing/Demonstrate_Factors_and_Microstructure_Features.py](graphing/Demonstrate_Factors_and_Microstructure_Features.py)
 
 **Additional test files:**
-- `graphing/test_fama_and_microstructure_features.py`
+- [graphing/test_fama_and_microstructure_features.py](graphing/test_fama_and_microstructure_features.py)
+
+
+
+
+
