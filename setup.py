@@ -14,7 +14,7 @@ extensions = [
     ),
     Extension(
         "mv_rnd.cbrapipe._fast",
-        ["notebooks/mv_rnd/cbrapipe/_fast.pyx"],
+        ["mv_rnd/cbrapipe/_fast.pyx"],
         include_dirs=[np.get_include()],
         extra_compile_args=["-O3", "-march=native"],
         language="c",

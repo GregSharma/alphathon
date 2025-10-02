@@ -19,6 +19,7 @@ dependencies = [
   "graphviz",
   "jupyter_bokeh",
   "panel",
+  "plotly",
   "watchfiles",
   "ipywidgets",
   "tabulate",
